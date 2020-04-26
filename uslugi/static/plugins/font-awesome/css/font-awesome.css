@@ -2084,3 +2084,9 @@
 .fa-percent:before {
   content: "\f295";
 }
+.fa-telegram:before {
+  content: "\f2c6";
+}
+.fa-whatsapp:before {
+  content: "\f232";
+}

@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Responsive HTML5 Website Landing Page for Developers">
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+    <script src="https://kit.fontawesome.com/9610100937.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="favicon.ico">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -21,8 +22,8 @@
     <link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.css' %}">
 
     <!-- github calendar css -->
-    <link rel="stylesheet" href="{% static 'plugins/github-calendar/dist/github-calendar.css' %}"
-/>
+    <!---<link rel="stylesheet" href="{% static 'plugins/github-calendar/dist/github-calendar.css' %}"--->
+
     <!-- github acitivity css -->
     <link rel="stylesheet" href="{% static 'plugins/github-activity/src/github-activity.css' %}">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
@@ -40,33 +41,117 @@
 <body>
     <!-- ******HEADER****** -->
     <header class="header">
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Написать нам</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Как Вас зовут?</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Номер телефона:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Сообщение:</label>
+            <textarea class="form-control" style="resize: none; height:250px;" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Отменить</button>
+        <button type="button" class="btn btn-primary">Отправить сообщение</button>
+      </div>
+    </div>
+  </div>
+</div>
         <div class="container">
-            <img class="profile-image img-responsive pull-left" src="{% static 'images/profile.png' %}" alt="James Lee" />
+            <img class="profile-image img-responsive pull-left" src="{% static 'images/logo-180x180.png' %}" alt="Exclusive WEB Design Studio" />
             <div class="profile-content pull-left">
-                <h1 class="name">Vadym Kuzmuk</h1>
+                <h1 class="name">Vadym Kuzmuk & Alexandr Voloshyn</h1>
                 <h2 class="desc">Web App Developer</h2>
                 <ul class="social list-inline">
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class="fa fa-github-alt"></i></a></li>
-                    <li class="last-item"><a href="#"><i class="fa fa-hacker-news"></i></a></li>
+                    <li><a href="https://www.facebook.com/vadym.kuzmuk"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/it_kuzya/"><i class="fa fa-instagram"></i></a></li>
                 </ul>
             </div><!--//profile-->
-            <a class="btn btn-cta-primary pull-right" href="http://themes.3rdwavemedia.com/" target="_blank"><i class="fa fa-paper-plane"></i> Contact Me</a>
+
+            <a class="btn btn-cta-primary pull-right" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" href="" target="_blank"><i class="fa fa-paper-plane"></i> Написать нам</a>
         </div><!--//container-->
     </header><!--//header-->
 
     <div class="container sections-wrapper">
+      <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">E-WDS</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#">О нас</a></li>
+          <li class="active"><a href="#">Услуги <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Цены</a></li>
+          <li><a href="#">Портфолио</a></li>
+          <li><a href="#">Контакты</a></li>
+
+          <!---<li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Раздел 1 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Ссылка 1.1</a></li>
+              <li><a href="#">Ссылка 1.2</a></li>
+              <li><a href="#">Ссылка 1.3</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Ссылка 1.4</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Ссылка 1.5</a></li>
+            </ul>
+          </li>--->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false"><i class="fa fa-phone-alt"></i> (073) 118-91-94<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#"><i class="fa fa-phone-volume"></i> &nbsp; (073) 118-91-94</a></li>
+              <li><a href="#"><i class="fa fa-phone-volume"></i> &nbsp; (096) 689-15-47</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#"><i class="fa fa-telegram"></i> &nbsp; @kuzyawork</a></li>
+              <li><a href="#"><i class="fa fa-envelope"></i> &nbsp; kuzyawork@gmail.com</a></li>
+              <li><a href="#"><i class="fa fa-whatsapp"></i> &nbsp; 0731189194</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
         <div class="row">
             <div class="primary col-md-8 col-sm-12 col-xs-12">
                 <section class="about section">
                     <div class="section-inner">
-                        <h2 class="heading">About Me</h2>
+                        <h2 class="heading">О Нас</h2>
                         <div class="content">
-                            <p>Write a brief intro about yourself. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</p>
+                            <p>Вадим и Александр разрабатывает мега-крутые проекты по доступной цене. Талантливые специалисты, лучшие из лучших, присылайте свое Техническое задание, и узнайте стоимость и сроки выполнения работы.</p>
 
-        <p>It's a good idea to include your personal interests and hobbies as well. Commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p>Что еще написать такое, чтобы Вам было интересно? Нам нужен текст.</p>
 
                         </div><!--//content-->
                     </div><!--//section-inner-->
@@ -74,14 +159,14 @@
 
                <section class="latest section">
                     <div class="section-inner">
-                        <h2 class="heading">Latest Projects</h2>
+                        <h2 class="heading">Последние работы</h2>
                         <div class="content">
 
                             <div class="item featured text-center">
-                                <h3 class="title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank">KickStarter - Velocity</a></h3>
+                                <h3 class="title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank">ProfAlmaz - продажа климатической техники</a></h3>
                                 <p class="summary">A responsive Bootstrap template designed for digital products</p>
                                 <div class="featured-image">
-                                    <a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank">
+                                    <a href="https://profalmaz.com.ua/" target="_blank">
                                     <img class="img-responsive project-image" src="{% static 'images/projects/project-featured.png' %}" alt="project name" />
                                     </a>
                                     <div class="ribbon">
@@ -90,20 +175,27 @@
                                     </div>
 
                                 <div class="desc text-left">
-                                    <p>You can promote your main project here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
-                                    <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. At vero eos et accusamus et iusto odio dignissimos ducimus.</p>
+                                    <p>Разработан интернет магазин для продажи климатической техники.</p>
+                                    <p>Выполненные работы:<br />
+                                      - Установка и Настройка OpenCart;<br />
+                                      - Разработан индивидуальный дизайн;<br />
+                                      - Оптимизорован для продвижения;<br />
+                                      - Установлен сертификат SSL;<br />
+                                      - Разработан логотип;<br />
+                                      - Ускоритель под GoogleSpeed.
+                                    </p>
                                 </div><!--//desc-->
-                                <a class="btn btn-cta-secondary" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-products-velocity/" target="_blank"><i class="fa fa-thumbs-o-up"></i> Back my project</a>
+                                <a class="btn btn-cta-secondary" href="https://profalmaz.com.ua/" target="_blank"><i class="fa fa-thumbs-o-up"></i> Посмотреть проект</a>
                             </div><!--//item-->
                             <hr class="divider" />
                             <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-mobile-apps-atom/" target="_blank">
+                                <a class="col-md-4 col-sm-4 col-xs-12" href="#" target="_blank">
                                 <img class="img-responsive project-image" src="{% static 'images/projects/project-5.png' %}" alt="project name" />
                                 </a>
                                 <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                    <h3 class="title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-mobile-apps-atom/" target="_blank">Atom - Designed for Mobile Apps</a></h3>
-                                    <p>You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
-                                    <p><a class="more-link" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-mobile-apps-atom/" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+                                    <h3 class="title"><a href="#" target="_blank">Сайт-Визитка - Домашний текстиль</a></h3>
+                                    <p>**********</p>
+                                    <p><a class="more-link" href="#" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
                                 </div><!--//desc-->
                             </div><!--//item-->
 
@@ -112,32 +204,23 @@
                                 <img class="img-responsive project-image" src="{% static 'images/projects/project-4.png' %}" alt="project name" />
                                 </a>
                                 <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                    <h3 class="title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-web-development-agencies-devstudio/" target="_blank">DevStudio - Designed for Web Development Agencies</a></h3>
-                                    <p>You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
-                                    <p><a class="more-link" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-web-development-agencies-devstudio/" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+                                    <h3 class="title"><a href="#" target="_blank">Интернет магазин - Домашний текстиль</a></h3>
+                                    <p>************</p>
+                                    <p><a class="more-link" href="#" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
                                 </div><!--//desc-->
                             </div><!--//item-->
 
                             <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-startups-tempo/" target="_blank">
-                                <img class="img-responsive project-image" src="{% static 'images/projects/project-1.png' %}" alt="project name" />
+                                <a class="col-md-4 col-sm-4 col-xs-12" href="#" target="_blank">
+                                <img class="img-responsive project-image" src="{% static 'images/projects/project-3.png' %}" alt="project name" />
                                 </a>
                                 <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                    <h3 class="title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-startups-tempo/" target="_blank">Tempo - Designed for Startups</a></h3>
-                                    <p>You can put one of your secondary projects here. Suspendisse in tellus dolor. Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim, eget iaculis ante dolor non turpis.</p>
-                                    <p><a class="more-link" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-startups-tempo/" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+                                    <h3 class="title"><a href="#" target="_blank">Интернет магазин пледов</a></h3>
+                                    <p>****************</p>
+                                    <p><a class="more-link" href="#" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
                                 </div><!--//desc-->
                             </div><!--//item-->
-                            <div class="item row">
-                                <a class="col-md-4 col-sm-4 col-xs-12" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-mobile-apps-delta/" target="_blank">
-                                <img class="img-responsive project-image" src="{% static 'images/projects/project-2.png' %}" alt="project name" />
-                                </a>
-                                <div class="desc col-md-8 col-sm-8 col-xs-12">
-                                    <h3 class="title"><a href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-mobile-apps-delta/" target="_blank">Delta - Designed for Mobile Apps</a></h3>
-                                    <p> You can put one of your secondary projects here. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
-                                    <p><a class="more-link" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-mobile-apps-delta/" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
-                                </div><!--//desc-->
-                            </div><!--//item-->
+
 
                         </div><!--//content-->
                     </div><!--//section-inner-->
@@ -145,66 +228,45 @@
 
                 <section class="projects section">
                     <div class="section-inner">
-                        <h2 class="heading">Other Projects</h2>
+                        <h2 class="heading">Отзывы</h2>
                         <div class="content">
                             <div class="item">
-                                <h3 class="title"><a href="#">Project Title Cras Lacus</a></h3>
-                                <p class="summary">Provide a brief description of your project. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatu.</p>
-                                <p><a class="more-link" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-mobile-apps-delta/" target="_blank"><i class="fa fa-external-link"></i> Find out more</a></p>
+                                <h3 class="title"><a href="#">Марина</a></h3>
+                                <p class="summary">Все отлично. Качественно и быстро. Понимает с полуслова и учитывает все пожелания.</p><hr />
+
                             </div><!--//item-->
                             <div class="item">
-                                <h3 class="title"><a href="#">Project Title Cras eget lacus</a> <span class="label label-theme">Open Source</span></h3>
-                                <p class="summary">Provide a brief description of your project. Maecenas ornare ultricies risus, in fermentum augue consectetur in. Vestibulum vitae mauris iaculis, sollicitudin velit in, molestie nulla. </p>
-                                <p><a class="more-link" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-mobile-apps-delta/" target="_blank"><i class="fa fa-external-link"></i> View on GitHub</a></p>
+                                <h3 class="title"><a href="#">Игорь Щ.</a></h3>
+                                <p class="summary">Отличный специалист! Сайт наполнялся довольно быстро. Был целый ряд нюансов и заморочек, которые Вадим очень внимательно соблюдал. Вадим, спасибо Вам за терпение и внимательность к мелочам. Продолжаем сотрудничать.</p><hr />
+
                             </div><!--//item-->
                             <div class="item">
-                                <h3 class="title"><a href="#">Project Title Maecenas Ornare</a> <span class="label label-theme">Open Source</span></h3>
-                                <p class="summary">Provide a brief description of your project. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel purus enim. Etiam tortor felis, fermentum ac ultrices sed.</p>
-                                <p><a class="more-link" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-mobile-apps-delta/" target="_blank"><i class="fa fa-external-link"></i> View on GitHub</a></p>
+                                <h3 class="title"><a href="#">Валерий</a></h3>
+                                <p class="summary">Все выполнено, без нареканий!</p><hr />
+
+                            </div><!--//item-->
+                            <div class="item">
+                                <h3 class="title"><a href="#">Дмитрий Я.</a></h3>
+                                <p class="summary">Молодец, выполнил все пункты технического задания.</p><hr />
+
+                            </div><!--//item-->
+                            <div class="item">
+                                <h3 class="title"><a href="#">Андрей Детинкин</a></h3>
+                                <p class="summary">Отличная работа! Все сделано качественно и быстро! Рекомендую к сотрудничеству!</p><hr />
+
+                            </div><!--//item-->
+                            <div class="item">
+                                <h3 class="title"><a href="#">Арина Александрова</a> <!---<span class="label label-theme">***</span>---></h3>
+                                <p class="summary">Благодарим, за работу! Огромное спасибо!</p><hr />
+                                <!---<p><a class="more-link" href="http://themes.3rdwavemedia.com/website-templates/responsive-bootstrap-theme-for-mobile-apps-delta/" target="_blank"><i class="fa fa-external-link"></i> View on GitHub</a></p>--->
                             </div><!--//item-->
 
-                            <a class="btn btn-cta-secondary" href="#">More on CoderWall <i class="fa fa-chevron-right"></i></a>
+                            <a class="btn btn-cta-secondary" style="background: #028E9B; border: 1px solid #028E9B;" href="#">Оставить отзыв</a>
+                            <a class="btn btn-cta-secondary pull-right" href="#">Смотреть все отзывы <i class="fa fa-chevron-right"></i></a>
+
 
                         </div><!--//content-->
                     </div><!--//section-inner-->
-                </section><!--//section-->
-
-                <section class="experience section">
-                    <div class="section-inner">
-                        <h2 class="heading">Work Experience</h2>
-                        <div class="content">
-                            <div class="item">
-                                <h3 class="title">Co-Founder & Lead Developer - <span class="place"><a href="#">Startup Hub</a></span> <span class="year">(2014 - Present)</span></h3>
-                                <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.</p>
-                            </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title">Software Engineer - <span class="place"><a href="#">Google</a></span> <span class="year">(2013 - 2014)</span></h3>
-                                <p>Vivamus a tortor eu turpis pharetra consequat quis non metus. Aliquam aliquam, orci eu suscipit pellentesque, mauris dui tincidunt enim. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.</p>
-                            </div><!--//item-->
-
-                            <div class="item">
-                                <h3 class="title">Software Engineer - <span class="place"><a href="#">eBay</a></span> <span class="year">(2012 - 2013)</span></h3>
-                                <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
-                            </div><!--//item-->
-
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </section><!--//section-->
-                <section class="github section">
-                    <div class="section-inner">
-                        <h2 class="heading">My GitHub</h2>
-                        <p>You can embed your GitHub contribution graph calendar using IonicaBizau's <a href="https://github.com/IonicaBizau/github-calendar" target="_blank">GitHub Calendar</a> widget.
-
-                        <div id="github-graph" class="github-graph">
-
-                        </div><!--//github-graph-->
-
-                        <p>You can also embed your GitHub activities using Casey Scarborough's <a href="http://caseyscarborough.com/projects/github-activity/" target="_blank">GitHub Activity Stream</a> widget.
-                        <!--//Usage: http://caseyscarborough.com/projects/github-activity/ -->
-                        <div id="ghfeed" class="ghfeed">
-                        </div><!--//ghfeed-->
-
-                    </div><!--//secton-inner-->
                 </section><!--//section-->
             </div><!--//primary-->
             <div class="secondary col-md-4 col-sm-12 col-xs-12">
@@ -212,21 +274,17 @@
                     <div class="section-inner">
                         <h2 class="heading sr-only">Basic Information</h2>
                         <div class="content">
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-map-marker"></i><span class="sr-only">Location:</span>San Francisco, US</li>
-                                <li><i class="fa fa-envelope-o"></i><span class="sr-only">Email:</span><a href="#">jameslee@website.com</a></li>
-                                <li><i class="fa fa-link"></i><span class="sr-only">Website:</span><a href="#">http://www.website.com</a></li>
-                            </ul>
+                            <p>Блок не знаю для чего, но будет пока</p>
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </aside><!--//aside-->
 
                 <aside class="skills aside section">
                     <div class="section-inner">
-                        <h2 class="heading">Skills</h2>
+                        <h2 class="heading">Навыки</h2>
                         <div class="content">
                             <p class="intro">
-                                Intro about your skills goes here. Keep the list lean and only show your primary skillset. You can always provide a link to your Linkedin or Coderwall profile so people can get more info there.</p>
+                                Наши навыки Вадима и Александра</p>
 
                             <div class="skillset">
 
@@ -255,7 +313,7 @@
                                 </div><!--//item-->
 
                                 <div class="item">
-                                    <h3 class="level-title">Ruby on Rails<span class="level-label">Pro</span></h3>
+                                    <h3 class="level-title">PHP & MySQL<span class="level-label">Pro</span></h3>
                                     <div class="level-bar">
                                         <div class="level-bar-inner" data-level="85%">
                                         </div>
@@ -268,118 +326,17 @@
                     </div><!--//section-inner-->
                 </aside><!--//section-->
 
-                <aside class="testimonials aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Testimonials</h2>
-                        <div class="content">
-                            <div class="item">
-                                <blockquote class="quote">
-                                    <p><i class="fa fa-quote-left"></i>James is an excellent software engineer and he is passionate about what he does. You can totally count on him to deliver your projects!</p>
-                                </blockquote>
-                                <p class="source"><span class="name">Tim Adams</span><br /><span class="title">Curabitur commodo</span></p>
-                            </div><!--//item-->
 
-                            <p><a class="more-link" href="#"><i class="fa fa-external-link"></i> More on Linkedin</a></p>
-
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-
-                <aside class="education aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Education</h2>
-                        <div class="content">
-                            <div class="item">
-                                <h3 class="title"><i class="fa fa-graduation-cap"></i> MSc Psychology and Computer Science</h3>
-                                <h4 class="university">University College London <span class="year">(2011-2012)</span></h4>
-                            </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title"><i class="fa fa-graduation-cap"></i> BSc Computer Science</h3>
-                                <h4 class="university">University of Bristol <span class="year">(2008-2011)</span></h4>
-                            </div><!--//item-->
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-
-                <aside class="languages aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Languages</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li class="item">
-                                    <span class="title"><strong>English:</strong></span>
-                                    <span class="level">Native Speaker <br class="visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
-                                </li><!--//item-->
-                                <li class="item">
-                                    <span class="title"><strong>Spanish:</strong></span>
-                                    <span class="level">Professional Proficiency <br class="visible-sm visible-xs"/><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half"></i></span>
-                                </li><!--//item-->
-                            </ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-
-                <aside class="blog aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Latest Blog Posts</h2>
-                        <p>You can use Sascha Depold's <a href="https://github.com/sdepold/jquery-rss" target="_blank">jQuery RSS plugin</a> to pull in your blog post feeds.</p>
-                        <div id="rss-feeds" class="content">
-
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-
-                <aside class="list music aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Favourite coding music</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-headphones"></i> <a href="#">Etiam hendrerit urna nunc</a></li>
-                                <li><i class="fa fa-headphones"></i> <a href="#">Ut sollicitudin in mauris non auctor</a></li>
-                                <li><i class="fa fa-headphones"></i> <a href="#">Etiam hendrerit urna nunc</a></li>
-                                <li><i class="fa fa-headphones"></i> <a href="#">Duis et felis bibendum</a></li>
-                            </ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
-
-                <aside class="list conferences aside section">
-                    <div class="section-inner">
-                        <h2 class="heading">Conferences</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-calendar"></i> <a href="https://developer.apple.com/wwdc/" target="_blank">WWDC 2014</a> (San Francisco)</li>
-                                <li><i class="fa fa-calendar"></i> <a href="http://hive.aigaseattle.org/">Hive</a> (Seattle)</li>
-                            </ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
 
                 <aside class="credits aside section">
                     <div class="section-inner">
-                        <h2 class="heading">Credits</h2>
+                        <h2 class="heading">Блок & Block</h2>
                         <div class="content">
-                            <ul class="list-unstyled">
-                                <li><a href="http://getbootstrap.com/" target="_blank"><i class="fa fa-external-link"></i> Bootstrap</a></li>
-                                <li><a href="http://fortawesome.github.io/Font-Awesome/" target="_blank"><i class="fa fa-external-link"></i> FontAwesome</a></li>
-                                <li><a href="http://jquery.com/" target="_blank"><i class="fa fa-external-link"></i> jQuery</a></li>
-                                <li><a href="https://github.com/IonicaBizau/github-calendar" target="_blank"><i class="fa fa-external-link"></i> GitHub Calendar Plugin</a></li>
 
-                                <li><a href="http://caseyscarborough.com/projects/github-activity/" target="_blank"><i class="fa fa-external-link"></i> GitHub Activity Stream</a></li>
-
-                                <li><a href="https://github.com/sdepold/jquery-rss" target="_blank"><i class="fa fa-external-link"></i> jQuery RSS</a></li>
-
-                                <li>Profile image: <a href="https://www.flickr.com/photos/dotbenjamin/2577394151" target="_blank">Ben Smith</a></li>
-                                <li>iPad and iPhone mocks: <a href="https://dribbble.com/perlerar" target="_blank">Regy Perlera</a></li>
-
-                            </ul>
 
                             <hr/>
-
-                             <p>This responsive portfolio template is handcrafted by UX designer <a href="https://www.linkedin.com/in/xiaoying" target="_blank">Xiaoying Riley</a> at <a href="http://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a> for developers and is <strong>FREE</strong> under the <a class="dotted-link" href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 License</a></p>
-                             <p>We will improve or add new features to this template based on users' feedback so follow us on twitter to get notified when a new version is out!</p>
-                            <a class="btn btn-cta-secondary btn-follow" href="https://twitter.com/3rdwave_themes" target="_blank"><i class="fa fa-twitter"></i> Follow us</a>
-                            <a class="btn btn-cta-primary btn-download" href="http://themes.3rdwavemedia.com/website-templates/free-responsive-website-template-for-developers/" target="_blank"><i class="fa fa-download"></i> I want to download</a>
+                            <!---<a class="btn btn-cta-secondary btn-follow" href="https://twitter.com/3rdwave_themes" target="_blank"><i class="fa fa-twitter"></i> Follow us</a>
+                            <a class="btn btn-cta-primary btn-download" href="http://themes.3rdwavemedia.com/website-templates/free-responsive-website-template-for-developers/" target="_blank"><i class="fa fa-download"></i> I want to download</a>--->
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </aside><!--//section-->
@@ -391,8 +348,7 @@
     <!-- ******FOOTER****** -->
     <footer class="footer">
         <div class="container text-center">
-                <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-                <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+                <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="https://e-wds.com.ua/" target="_blank">Exclusive Web Design Studio</a> for developers</small>
         </div><!--//container-->
     </footer><!--//footer-->
 
@@ -403,10 +359,10 @@
     <!-- github calendar plugin -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/3.0.2/es6-promise.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fetch/0.10.1/fetch.min.js"></script>
-    <script type="text/javascript" src="{% static 'plugins/github-calendar/dist/github-calendar.min.js' %}"></script>
+    <!---<script type="text/javascript" src="{% static 'plugins/github-calendar/dist/github-calendar.min.js' %}"></script>--->
     <!-- github activity plugin -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
-    <script type="text/javascript" src="{% static 'plugins/github-activity/src/github-activity.js' %}"></script>
+    <!---<script type="text/javascript" src="{% static 'plugins/github-activity/src/github-activity.js' %}"></script>--->
     <!-- custom js -->
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 </body>
